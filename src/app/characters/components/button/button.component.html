@@ -1,0 +1,37 @@
+<div class="flex flex-col items-center gap-4 p-6 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg max-w-sm mx-auto">
+    <!-- Buscador -->
+    <div class="flex items-center gap-2">
+      <input
+        [(ngModel)]="searchQueryInternal"
+        type="text"
+        placeholder="Buscar personaje..."
+        class="w-64 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:focus:ring-blue-500"
+      />
+      <button
+        (click)="searchCharacters()"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      >
+        Buscar
+      </button>
+    </div>
+    
+    <!-- Paginación -->
+    <div class="flex gap-4">
+      <button
+        type="button"
+        (click)="goToPreviousPage()"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 disabled:opacity-50 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        [disabled]="currentPage === 1"
+      >
+        Página Anterior
+      </button>
+      <button
+        type="button"
+        (click)="goToNextPage()"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 disabled:opacity-50 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        [disabled]="currentPage === totalPages"
+      >
+        Siguiente página
+      </button>
+    </div>
+  </div>

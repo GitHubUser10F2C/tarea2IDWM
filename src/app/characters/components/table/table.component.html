@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>Lista de Personajes</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Imagen</th>
+          <th>Nombre</th>
+          <th>Estado</th>
+          <th>Especie</th>
+          <th>Ubicación Actual</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let character of characters">
+          <td><img [src]="character.image" alt="Imagen de {{ character.name }}" width="100"></td>
+          <td>{{ character.name }}</td>
+          <td>{{ character.status }}</td>
+          <td>{{ character.species }}</td>
+          <td>{{ character.location.name}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
